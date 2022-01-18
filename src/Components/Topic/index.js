@@ -1,13 +1,15 @@
 function Topic({ lessonTopic, resourceLinks }) {
   return (
-    <div>
+    <div className="topics">
       <h2>{lessonTopic}</h2>
-      <div>
+      <div className="scroll">
         <ul>
-          <li>{resourceLinks}</li>
+          {resourceLinks.map((resourcelink) => {
+            return <li>{resourcelink}</li>;
+          })}
         </ul>
       </div>
-      <input></input>
+      <input className="inputBox"></input>
       <button>Submit</button>
     </div>
   );

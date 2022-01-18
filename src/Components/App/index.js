@@ -8,7 +8,16 @@ let day = "Day 2";
 let week = "Week 3";
 let overview = "Learning React";
 let lessonTopic = "useReducer";
-let resourceLinks = "link to awesome resource!";
+let resourceLinks = [
+  "link to awesome resource!",
+  "link to awesome resource!",
+  "link to awesome resource!",
+  "link to awesome resource!",
+  "link to awesome resource!",
+  "link to awesome resource!",
+  "link to awesome resource!",
+  "link to awesome resource!",
+];
 
 function App() {
   return (

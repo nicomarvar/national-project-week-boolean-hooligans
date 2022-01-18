@@ -1,7 +1,49 @@
+:root {
+  --background-color: #c4c4c4;
+  --border-top-color: #5456dc;
+}
 .App {
   display: grid;
   grid-template-areas:
     "sidebar header"
     "sidebar main"
     "sidebar main";
+  grid-gap: 20px;
+}
+.daybox {
+  border-top: 4px solid var(--border-top-color);
+  display: flex;
+  flex-direction: row;
+  max-width: 80vw;
+  justify-content: space-around;
+}
+.nav {
+  background-color: var(--background-color);
+  width: 10vw;
+}
+.topbar {
+  text-align: center;
+  width: 90vw;
+  background-color: var(--background-color);
+}
+.topics {
+  border-top: 4px solid var(--border-top-color);
+  display: flex;
+  flex-direction: row;
+  background-color: var(--background-color);
+  max-width: 80vw;
+  justify-content: space-around;
+}
+.scroll {
+  display: block;
+  background-color: #ffffff;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 20%;
+  height: 100px;
+  overflow-y: scroll;
+}
+.inputBox {
+  width: 30%;
 }

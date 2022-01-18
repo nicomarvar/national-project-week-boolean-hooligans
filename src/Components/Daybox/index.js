@@ -1,8 +1,6 @@
-// import Topic from "Topic";
-
 function Daybox({ day, overview }) {
   return (
-    <div>
+    <div className="daybox">
       <h1>{day}</h1>
       <h4>{overview}</h4>
     </div>

@@ -1,6 +1,6 @@
 function Topbar({ week }) {
   return (
-    <div>
+    <div className="topbar">
       <h3>{week}</h3>
     </div>
   );
