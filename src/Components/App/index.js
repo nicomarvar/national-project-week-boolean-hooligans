@@ -13,10 +13,10 @@ let resourceLinks = "link to awesome resource!";
 function App() {
   return (
     <div className="App">
-      <Sidebar />
+      <Sidebar className="sidebar" />
       <main>
-        <Topbar week={week}></Topbar>
-        <Daybox day={day} overview={overview}></Daybox>
+        <Topbar week={week} className="header"></Topbar>
+        <Daybox day={day} overview={overview} className="main"></Daybox>
         <Topic lessonTopic={lessonTopic} resourceLinks={resourceLinks}></Topic>
       </main>
     </div>
