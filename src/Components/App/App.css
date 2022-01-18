@@ -10,16 +10,18 @@
     "sidebar main";
   grid-gap: 20px;
 }
+/* sidebar */
+.nav {
+  background-color: var(--background-color);
+  width: 10vw;
+}
+/* main */
 .daybox {
   border-top: 4px solid var(--border-top-color);
   display: flex;
   flex-direction: row;
   max-width: 80vw;
   justify-content: space-around;
-}
-.nav {
-  background-color: var(--background-color);
-  width: 10vw;
 }
 .topbar {
   text-align: center;
