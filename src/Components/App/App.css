@@ -8,44 +8,93 @@
     "sidebar header"
     "sidebar main"
     "sidebar main";
-  grid-gap: 20px;
 }
 /* sidebar */
 .nav {
   background-color: var(--background-color);
-  width: 10vw;
+  width: 17vw;
 }
 /* main */
+.topbar {
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  width: 82.5vw;
+  background-color: var(--background-color);
+}
+.topText {
+  margin: 0%;
+  font-size: 48px;
+}
 .daybox {
-  border-top: 4px solid var(--border-top-color);
+  border-top-left-radius: 25px;
+  border-top: 8px solid var(--border-top-color);
   display: flex;
   flex-direction: row;
   max-width: 80vw;
-  justify-content: space-around;
+  justify-content: left;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 3%;
 }
-.topbar {
-  text-align: center;
-  width: 90vw;
-  background-color: var(--background-color);
+.dayText {
+  margin: 0%;
+  font-size: 96px;
+}
+.overview {
+  margin-top: 6%;
+  margin-left: 16%;
+  font-size: 24px;
 }
 .topics {
-  border-top: 4px solid var(--border-top-color);
+  box-shadow: 10px 10px 5px grey;
+  border-top-left-radius: 25px;
+  border-top: 8px solid var(--border-top-color);
   display: flex;
   flex-direction: row;
   background-color: var(--background-color);
-  max-width: 80vw;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 283px;
   justify-content: space-around;
 }
+.topicTitle {
+  font-size: 48px;
+  margin-top: 7%;
+}
 .scroll {
+  box-shadow: 10px 10px 5px grey;
   display: block;
   background-color: #ffffff;
   padding: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  width: 20%;
-  height: 100px;
+  margin-top: 20px;
+  width: 35%;
+  height: 80%;
   overflow-y: scroll;
 }
+.submitBox {
+  box-shadow: 10px 10px 5px grey;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  margin-top: 20px;
+  width: 20%;
+  height: 83%;
+  text-align: center;
+}
 .inputBox {
-  width: 30%;
+  border: #ffffff;
+  width: 98%;
+  height: 90%;
+}
+.submitButton {
+  /* border: none; */
+  border-radius: 25px;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+  width: 35%;
+  height: 10%;
+  margin: 13px;
 }
