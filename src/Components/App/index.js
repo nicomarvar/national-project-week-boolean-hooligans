@@ -32,14 +32,14 @@ function App() {
   const [apiData, setData] = useState([9]);
   useEffect(() => {
     FetchApi();
-  });
+  }, []);
   async function FetchApi() {
     const response = await fetch("https://boolean-hooligans.herokuapp.com/");
     const data = await response.json();
     console.log("called");
     setData(data);
   }
-  FetchApi();
+
   console.log(apiData);
   return (
     <div className="App">
