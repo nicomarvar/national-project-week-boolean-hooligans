@@ -12,17 +12,17 @@ function WeekButtons() {
 
   return (
     <ul id="weekList">
-      {weeks.map((week) => {
+      {weeks.map((week, index) => {
         return (
             <li>
                 <button onClick={dropDown}> Week {week}</button>
                 <ul
-                    id={week}
+                    id={index}
                     className={isOn ? "display-show" : "display-none"}
                 >
                     {days.map((day) => {
                         return <li>Day {day}</li>;
-                    })}
+                    })} 
                 </ul>
             </li>
         );
