@@ -18,11 +18,16 @@ import React, { useState, useEffect } from "react";
 
 
 function App() {
-  const [apiData, setApiData] = useState([9]);
-  // const [isOn, setIsOn] = useState(false);
-  // function dropDown() {
-  //     return setIsOn((isOn) => !isOn);
-  // }
+  const [apiData, setApiData] = useState([]);
+  const [isOn, setIsOn] = useState(false);
+  const [dayId, setDayId] = useState(0)
+  function dropDown() {
+      return setIsOn((isOn) => !isOn);
+  }
+  function gettingDay(id){
+    setDayId(id)
+    console.log(dayId)
+  }
 
   useEffect(() => {
     FetchApi();
@@ -39,9 +44,9 @@ console.log(apiData)
   return (
       <div className="App">
 
-          {/* <nav className="nav">
+          <nav className="nav">
               <ul id="weekList">
-                  {apiData.map(({ weekname, weekid, daysid }) => {
+                  {apiData?.map(({ weekname, weekid, daysid }) => {
                       return (
                           <li>
                               <button onClick={dropDown}> {weekname}</button>
@@ -53,9 +58,9 @@ console.log(apiData)
                               >
                                   {daysid.map((day) => {
                                       if (day % 4 === 0) {
-                                          return <li>Day 4</li>;
+                                          return <li id = {day} onClick={()=>{gettingDay({day})}}>Day 4</li>;
                                       } else {
-                                          return <li>Day {day % 4}</li>;
+                                          return <li id = {day} onClick={()=>{gettingDay({day})}}>Day {day % 4}</li>;
                                       }
                                   })}
                               </ul>
@@ -63,7 +68,7 @@ console.log(apiData)
                       );
                   })}
               </ul>
-          </nav> */}
+          </nav>
           {/* <main>
               <div className="topbar">
                   <h3 className="topText">{week}</h3>
