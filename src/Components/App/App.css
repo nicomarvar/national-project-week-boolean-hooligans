@@ -28,15 +28,6 @@
   margin-bottom: 10px;
 }
 
-#dayList {
-  background-color: lightgrey;
-  border-radius: 20px;
-  border-style: none;
-  width: 40%;
-  height: 30px;
-  margin-bottom: 10px;
-}
-
 .display-show {
   display: block;
 }
