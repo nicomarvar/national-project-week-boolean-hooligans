@@ -31,7 +31,11 @@ function WeekButtons() {
             <button onClick={dropDown}> {weekname}</button>
             <ul id={weekid} className={isOn ? "display-show" : "display-none"}>
               {daysid.map((day) => {
-                return <li>Day {day}</li>;
+                 if(day%4 === 0) {
+                  return <li>Day 4</li>;
+                } else {
+                  return <li>Day {day%4}</li>
+                }
               })}
                
             </ul>
