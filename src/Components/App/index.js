@@ -1,42 +1,98 @@
 import "./App.css";
-import Sidebar from "../Sidebar";
-import Daybox from "../Daybox";
-import Topic from "../Topic";
-import Topbar from "../Topbar";
+// import Sidebar from "../Sidebar";
+// import Daybox from "../Daybox";
+// import Topic from "../Topic";
+// import Topbar from "../Topbar";
+import React, { useState, useEffect } from "react";
 
-let day = "Day 2";
-let week = "Week 3";
-let overview = "Learning React";
-let lessonTopic = "useReducer";
-let resourceLinks = [
-  "link to awesome resource!",
-  "link to awesome resource!",
-  "link to awesome resource!",
-  "link to awesome resource!",
-  "link to awesome resource!",
-  "link to awesome resource!",
-  "link to awesome resource!",
-  "link to awesome resource!",
-  "link to awesome resource!",
-  "link to awesome resource!",
-  "link to awesome resource!",
-  "link to awesome resource!",
-  "link to awesome resource!",
-  "link to awesome resource!",
-  "link to awesome resource!",
-  "link to awesome resource!",
-];
+// let day = "Day 2";
+// let week = "Week 3";
+// let overview = "Learning React";
+// let lessonTopic = "useReducer";
+// let resourceLinks = [
+//   "link to awesome resource!",
+//   "link to awesome resource!",
+//   "link to awesome resource!",
+// ];
+
+
 
 function App() {
+  const [apiData, setApiData] = useState([]);
+  const [isOn, setIsOn] = useState(false);
+  const [dayId, setDayId] = useState(0)
+  function dropDown() {
+      return setIsOn((isOn) => !isOn);
+  }
+  function gettingDay(id){
+    setDayId(id)
+    console.log(dayId)
+  }
+
+  useEffect(() => {
+    FetchApi();
+  }, []);
+  async function FetchApi() {
+    const response = await fetch("https://boolean-hooligans.herokuapp.com/");
+    const data = await response.json();
+
+    setApiData(data.payload);
+  }
+
+console.log(apiData)
+
   return (
-    <div className="App">
-      <Sidebar className="sidebar" />
-      <main>
-        <Topbar week={week} className="header"></Topbar>
-        <Daybox day={day} overview={overview} className="main"></Daybox>
-        <Topic lessonTopic={lessonTopic} resourceLinks={resourceLinks}></Topic>
-      </main>
-    </div>
+      <div className="App">
+
+          <nav className="nav">
+              <ul id="weekList">
+                  {apiData?.map(({ weekname, weekid, daysid }) => {
+                      return (
+                          <li>
+                              <button onClick={dropDown}> {weekname}</button>
+                              <ul
+                                  id={weekid}
+                                  className={
+                                      isOn ? "display-show" : "display-none"
+                                  }
+                              >
+                                  {daysid.map((day) => {
+                                      if (day % 4 === 0) {
+                                          return <li id = {day} onClick={()=>{gettingDay({day})}}>Day 4</li>;
+                                      } else {
+                                          return <li id = {day} onClick={()=>{gettingDay({day})}}>Day {day % 4}</li>;
+                                      }
+                                  })}
+                              </ul>
+                          </li>
+                      );
+                  })}
+              </ul>
+          </nav>
+          {/* <main>
+              <div className="topbar">
+                  <h3 className="topText">{week}</h3>
+              </div>
+              <div className="daybox">
+                  <h1 className="dayText">{day}</h1>
+                  <h4 className="overview">{overview}</h4>
+              </div>
+              <div className="topics">
+                  <h2 className="topicTitle">{lessonTopic}</h2>
+                  <div className="scroll">
+                      <ul>
+                          {resourceLinks.map((resourcelink) => {
+                              return <li>{resourcelink}</li>;
+                          })}
+                      </ul>
+                  </div>
+                  <div className="submitBox">
+                      <input className="inputBox"></input>
+                      <button className="submitButton">Submit</button>
+                  </div>
+              </div>
+          </main> */}
+      </div>
   );
 }
 
