@@ -24,7 +24,6 @@ function App() {
   }
   function gettingDay(id) {
     setDayId(id);
-    console.log(dayId);
   }
 
   useEffect(() => {
@@ -33,11 +32,8 @@ function App() {
   async function FetchApi() {
     const response = await fetch("https://boolean-hooligans.herokuapp.com/");
     const data = await response.json();
-
     setApiData(data.payload);
   }
-
-  console.log(apiData);
 
   return (
     <div className="App">
