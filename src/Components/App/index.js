@@ -1,49 +1,98 @@
 import "./App.css";
-import Sidebar from "../Sidebar";
+// import Sidebar from "../Sidebar";
 // import Daybox from "../Daybox";
 // import Topic from "../Topic";
 // import Topbar from "../Topbar";
-import React, {useEffect, useState} from "react";
+import React, { useState, useEffect } from "react";
 
-// export let data = {
-//     success: true,
-//     message: "found all the weeks",
-//     payload: [
-//         { weekid: 1, weekname: "Week One", daysid: [1, 2, 3, 4] },
-//         { weekid: 2, weekname: "Week Two", daysid: [5, 6, 7, 8] },
-//         { weekid: 3, weekname: "Week Three", daysid: [9, 10, 11, 12] },
-//         { weekid: 4, weekname: "Week Four", daysid: [13, 14, 15, 16] },
-//         { weekid: 5, weekname: "Week Five", daysid: [17, 18, 19, 20] },
-//         { weekid: 6, weekname: "Week Six", daysid: [21, 22, 23, 24] },
-//         { weekid: 7, weekname: "Week Seven", daysid: [25, 26, 27, 28] },
-//         { weekid: 8, weekname: "Week Eight", daysid: [29, 30, 31, 32] },
-//     ],
-// };
+// let day = "Day 2";
+// let week = "Week 3";
+// let overview = "Learning React";
+// let lessonTopic = "useReducer";
+// let resourceLinks = [
+//   "link to awesome resource!",
+//   "link to awesome resource!",
+//   "link to awesome resource!",
+// ];
+
 
 
 function App() {
-
-  const [apiData, setApiData] = useState([])
-useEffect(()=>{
-  async function fetchApi(){
-      const response = await fetch("https://boolean-hooligans.herokuapp.com/");
-      const data = await response.json();
-      setApiData(data.payload)
-      
+  const [apiData, setApiData] = useState([]);
+  const [isOn, setIsOn] = useState(false);
+  const [dayId, setDayId] = useState(0)
+  function dropDown() {
+      return setIsOn((isOn) => !isOn);
   }
-  fetchApi();
-}, [])
-console.log(apiData);
+  function gettingDay(id){
+    setDayId(id)
+    console.log(dayId)
+  }
+
+  useEffect(() => {
+    FetchApi();
+  }, []);
+  async function FetchApi() {
+    const response = await fetch("https://boolean-hooligans.herokuapp.com/");
+    const data = await response.json();
+
+    setApiData(data.payload);
+  }
+
+console.log(apiData)
+
   return (
-    
-    <div className="App">
-      <Sidebar className="sidebar" weekid={apiData.weekid} weekname={apiData.weekname} daysid={apiData.daysid}/>
-      <main>a
-        {/* <Topbar week={data.payload.weekname} className="header"></Topbar>
-        <Daybox day={data.payload.daysid} overview={data.message} className="main"></Daybox>
-        <Topic lessonTopic={data.message} resourceLinks={data.message}></Topic> */}
-      </main>
-    </div>
+      <div className="App">
+
+          <nav className="nav">
+              <ul id="weekList">
+                  {apiData?.map(({ weekname, weekid, daysid }) => {
+                      return (
+                          <li>
+                              <button onClick={dropDown}> {weekname}</button>
+                              <ul
+                                  id={weekid}
+                                  className={
+                                      isOn ? "display-show" : "display-none"
+                                  }
+                              >
+                                  {daysid.map((day) => {
+                                      if (day % 4 === 0) {
+                                          return <li id = {day} onClick={()=>{gettingDay({day})}}>Day 4</li>;
+                                      } else {
+                                          return <li id = {day} onClick={()=>{gettingDay({day})}}>Day {day % 4}</li>;
+                                      }
+                                  })}
+                              </ul>
+                          </li>
+                      );
+                  })}
+              </ul>
+          </nav>
+          {/* <main>
+              <div className="topbar">
+                  <h3 className="topText">{week}</h3>
+              </div>
+              <div className="daybox">
+                  <h1 className="dayText">{day}</h1>
+                  <h4 className="overview">{overview}</h4>
+              </div>
+              <div className="topics">
+                  <h2 className="topicTitle">{lessonTopic}</h2>
+                  <div className="scroll">
+                      <ul>
+                          {resourceLinks.map((resourcelink) => {
+                              return <li>{resourcelink}</li>;
+                          })}
+                      </ul>
+                  </div>
+                  <div className="submitBox">
+                      <input className="inputBox"></input>
+                      <button className="submitButton">Submit</button>
+                  </div>
+              </div>
+          </main> */}
+      </div>
   );
 }
 
