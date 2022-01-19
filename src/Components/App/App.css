@@ -15,6 +15,28 @@
   background-color: var(--background-color);
   width: 10vw;
 }
+
+
+
+
+
+
+
+.display-show{
+  display:block;
+}
+
+.display-none{
+  display: none;
+}
+
+
+
+
+
+
+
+
 /* main */
 .daybox {
   border-top: 4px solid var(--border-top-color);
