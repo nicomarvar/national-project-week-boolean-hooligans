@@ -70,9 +70,9 @@ console.log(apiData)
             </ul>
         </nav>
         <main>
-            <Topbar />
-            <Daybox/>
-            <Topic />
+            <Topbar week={week} />
+            <Daybox day={day} overview={overview}/>
+            <Topic lessonTopic={lessonTopic} resourceLinks={resourceLinks}/>
         </main>
       </div>
   );
