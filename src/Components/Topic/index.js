@@ -6,7 +6,7 @@ function Topic({ topicId }) {
 
   useEffect(function(){
     async function fetchTopic(){
-        const request = await fetch(`https://boolean-hooligans.herokuapp.com/subjects/${topicId}`);
+        const request = await fetch(`https://boolean-hooligans.herokuapp.com/subjects/${topicId[0]}`);
         const response = await request.json();
         console.log("called")
         setLinks(response.payload[0].links);
