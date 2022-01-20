@@ -7,7 +7,7 @@ import React, { useState, useEffect } from "react";
 
 let day = "Day 2";
 let week = "Week 3";
-let overview = "Learning React";
+let overview = "The Days Topics";
 let lessonTopic = "useReducer";
 let resourceLinks = [
   "link to awesome resource!",
@@ -18,11 +18,14 @@ let resourceLinks = [
 function App() {
   const [apiData, setApiData] = useState([]);
   const [dayId, setDayId] = useState(1);
+  const [theWeek, setTheWeek] = useState("");
 
   function gettingDay(id) {
     setDayId(id);
   }
-
+  function gettingWeek(theWeekName) {
+    setTheWeek(theWeekName);
+  }
   useEffect(() => {
     FetchApi();
   }, []);
@@ -34,9 +37,9 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebar apiData={apiData} gettingDay={gettingDay}/>
+      <Sidebar gettingWeek={gettingWeek} apiData={apiData} gettingDay={gettingDay}/>
       <main>
-        <Topbar week={week} />
+        <Topbar week={theWeek} />
         <Daybox dataId={dayId} day={day} overview={overview} />
         <Topic lessonTopic={lessonTopic} resourceLinks={resourceLinks} />
       </main>
