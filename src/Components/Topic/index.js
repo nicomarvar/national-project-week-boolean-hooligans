@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from "react";
 
 function Topic({ topicId }) {
-  const [links, setLinks] = useState([]);
+  const [links, setLinks] = useState(["Find Here some useful links"]);
   const [topics, setTopic] = useState("");
+
+  useEffect(function(){
+    async function fetchTopic(){
+        const request = await fetch(`https://boolean-hooligans.herokuapp.com/subjects/${topicId[0]}`);
+        const response = await request.json();
+        setLinks([response.payload[0].links]);
+    }
+    
+    fetchTopic();
+}, [])
 
   useEffect(function(){
       async function fetchTopic(){
           const request = await fetch(`https://boolean-hooligans.herokuapp.com/subjects/${topicId[0]}`);
           const response = await request.json();
-          console.log(response)
           setTopic([response.payload[0].subjectname]);
       }
       fetchTopic();
