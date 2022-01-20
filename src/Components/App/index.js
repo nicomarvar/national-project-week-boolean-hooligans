@@ -6,11 +6,11 @@ import Topbar from "../Topbar";
 import React, { useState, useEffect } from "react";
 
 let day = "Day 2";
-let week = "Week 3";
 let overview = "The Days Topics";
 let lessonTopic = "useReducer";
 let resourceLinks = [
   "link to awesome resource!",
+  "Scott !!!!!!!!",
   "link to awesome resource!",
   "link to awesome resource!",
 ];

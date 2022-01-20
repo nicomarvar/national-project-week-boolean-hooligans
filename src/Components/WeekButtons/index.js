@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DayButtons from "./DayButtons";
 
-function WeekButtons({ apiData, gettingDay }) {
+function WeekButtons({ apiData, gettingDay, gettingWeek }) {
     const [isOn, setIsOn] = useState(null);
     function dropDown(index) {
         console.log("dropdown");
@@ -21,8 +21,10 @@ function WeekButtons({ apiData, gettingDay }) {
             {apiData?.map(({ weekname, weekid, daysid }, index) => {
                 return (
                     <li>
-                        <button onClick={() => dropDown(index)}>
-                            {" "}
+                        <button onClick={() =>{
+                            dropDown(index);
+                            gettingWeek(weekname);
+                        }}>
                             {weekname}
                         </button>
                         <ul
@@ -31,7 +33,10 @@ function WeekButtons({ apiData, gettingDay }) {
                                 isOn === index ? "display-show" : "display-none"
                             }
                         >
-                            <DayButtons daysid={daysid} gettingDay={gettingDay} />
+                            <DayButtons
+                                daysid={daysid}
+                                gettingDay={gettingDay}
+                            />
                         </ul>
                     </li>
                 );
