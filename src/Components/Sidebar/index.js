@@ -1,12 +1,16 @@
-// import React from "react";
-// import WeekButtons from "../WeekButtons";
+import React from "react";
+import WeekButtons from "../WeekButtons";
 
-// function Sidebar() {
-//   return (
-//     <nav className="nav">
-//       <WeekButtons />
-//     </nav>
-//   );
-// }
+function Sidebar({ apiData, gettingDay, gettingWeek }) {
+    return (
+        <nav className="nav">
+            <WeekButtons
+                apiData={apiData}
+                gettingDay={gettingDay}
+                gettingWeek={gettingWeek}
+            />
+        </nav>
+    );
+}
 
-// export default Sidebar;
+export default Sidebar;

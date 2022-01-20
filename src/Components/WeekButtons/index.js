@@ -1,45 +1,48 @@
-// import React, { useState } from "react";
+import React, { useState } from "react";
+import DayButtons from "./DayButtons";
 
-// // const weeks = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-// // const days = [1, 2, 3, 4, 5];
+function WeekButtons({ apiData, gettingDay, gettingWeek }) {
+    const [isOn, setIsOn] = useState(null);
+    function dropDown(index) {
+        console.log("dropdown");
+        //if it's not null and the stored number isn't equal to the index passed then we want to setIsOn to be index.
+        if (isOn !== null && isOn !== index) {
+            console.log("if");
+            return setIsOn(index);
+        } else if (isOn === null) {
+            return setIsOn(index);
+        } else {
+            console.log("else");
+            return setIsOn(null);
+        }
+    }
+    return (
+        <ul id="weekList">
+            {apiData?.map(({ weekname, weekid, daysid }, index) => {
+                return (
+                    <li>
+                        <button onClick={() =>{
+                            dropDown(index);
+                            gettingWeek(weekname);
+                        }}>
+                            {weekname}
+                        </button>
+                        <ul
+                            id={weekid}
+                            className={
+                                isOn === index ? "display-show" : "display-none"
+                            }
+                        >
+                            <DayButtons
+                                daysid={daysid}
+                                gettingDay={gettingDay}
+                            />
+                        </ul>
+                    </li>
+                );
+            })}
+        </ul>
+    );
+}
 
-// let data = {
-//   success: true,
-//   message: "found all the weeks",
-//   payload: [
-//     { weekid: 1, weekname: "Week One", daysid: [1, 2, 3, 4] },
-//     { weekid: 2, weekname: "Week Two", daysid: [5, 6, 7, 8] },
-//     { weekid: 3, weekname: "Week Three", daysid: [9, 10, 11, 12] },
-//     { weekid: 4, weekname: "Week Four", daysid: [13, 14, 15, 16] },
-//     { weekid: 5, weekname: "Week Five", daysid: [17, 18, 19, 20] },
-//     { weekid: 6, weekname: "Week Six", daysid: [21, 22, 23, 24] },
-//     { weekid: 7, weekname: "Week Seven", daysid: [25, 26, 27, 28] },
-//     { weekid: 8, weekname: "Week Eight", daysid: [29, 30, 31, 32] },
-//   ],
-// };
-// function WeekButtons() {
-  
-//   return (
-//     <ul id="weekList">
-//       {data.payload.map(({ weekname, weekid, daysid }) => {
-//         return (
-//           <li>
-//             <button onClick={dropDown}> {weekname}</button>
-//             <ul id={weekid} className={isOn ? "display-show" : "display-none"}>
-//               {daysid.map((day) => {
-//                  if(day%4 === 0) {
-//                   return <li>Day 4</li>;
-//                 } else {
-//                   return <li>Day {day%4}</li>
-//                 }
-//               })}
-//                
-//             </ul>
-//           </li>
-//         );
-//       })}
-//     </ul>
-//   );
-// }
-
-// export default WeekButtons;
+export default WeekButtons;
