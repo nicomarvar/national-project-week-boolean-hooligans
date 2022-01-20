@@ -2,19 +2,18 @@ import React, { useState } from "react";
 import DayButtons from "./DayButtons";
 
 function WeekButtons({ apiData, gettingDay, gettingWeek }) {
-    const [isOn, setIsOn] = useState(null);
-    function dropDown(index) {
-        console.log("dropdown");
-        //if it's not null and the stored number isn't equal to the index passed then we want to setIsOn to be index.
-        if (isOn !== null && isOn !== index) {
-            console.log("if");
-            return setIsOn(index);
-        } else if (isOn === null) {
-            return setIsOn(index);
-        } else {
-            console.log("else");
-            return setIsOn(null);
-        }
+  const [isOn, setIsOn] = useState(null);
+  function dropDown(index) {
+    console.log("dropdown");
+    //if it's not null and the stored number isn't equal to the index passed then we want to setIsOn to be index.
+    if (isOn !== null && isOn !== index) {
+      console.log("if");
+      return setIsOn(index);
+    } else if (isOn === null) {
+      return setIsOn(index);
+    } else {
+      console.log("else");
+      return setIsOn(null);
     }
     return (
         <ul id="weekList">
