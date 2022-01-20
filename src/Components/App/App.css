@@ -37,10 +37,8 @@ submit button
   background-color: var(--background-color);
   width: 17vw;
   height: 100vh;
+  margin: 0;
   padding-top: 48px;
-}
-
-.nav ul {
   list-style: none;
 }
 
@@ -49,21 +47,23 @@ submit button
   background-color: lightgrey;
   border-radius: 30px;
   border-style: none;
-
   width: 80%;
   height: 50px;
   margin: 10px 0;
   font-family: 'Righteous', cursive;
   font-size: 20px;
+
 }
 .nav button:hover,
-nav .color-on {
+.nav .color-on {
   background-color: orange;
 }
 
 .dayListButton {
   font-family: 'Righteous', cursive;
   font-weight: 400;
+    list-style: none;
+    font-size: 20px;
 }
 
 .dayListButton:hover {
@@ -82,36 +82,47 @@ nav .color-on {
 }
 
 /* main */
+
+#title {
+  font-size: 60px;
+  font-family: 'Righteous', cursive;
+  text-align: center;
+}
+
+
 .topbar {
-  margin: 0px;
-  padding: 20px;
+  /* margin: 0px; */
+  margin-top: 5%;
+  padding-top: 30px;
   display: flex;
-  justify-content: center;
+  justify-content:flex-start;
+  border-top: 8px solid var(--border-top-color);
   width: 83vw;
+  margin-left: 5%;
   /* background-color: var(--background-color); */
 }
 .topText {
   margin: 0%;
-  font-size: 48px;
+  font-size: 52px;
   font-family: 'Righteous', cursive;
 }
 .daybox {
   /* border-top-left-radius: 25px; */
-  border-top: 8px solid var(--border-top-color);
+  /* border-top: 8px solid var(--border-top-color); */
   display: flex;
   flex-direction: row;
   max-width: 80vw;
   justify-content: left;
   margin-left: 5%;
   margin-right: 5%;
-  margin-top: 3%;
+  /* margin-top: 3%; */
 }
 .dayText {
   margin: 0%;
-  font-size: 66px;
+  font-size: 52px;
   font-family: 'Righteous', cursive;
   position: relative;
-  top: 20px;
+  /* top: 20px; */
 }
 .overview {
   margin-top: 6%;
@@ -119,7 +130,7 @@ nav .color-on {
   font-size: 24px;
 }
 .topics {
-  box-shadow: 10px 10px 5px grey;
+  box-shadow: 5px 5px 2px grey;
   /* border-top-left-radius: 25px; */
   /* border-top-right-radius: 25px; */
   border-top: 8px solid var(--border-top-color);
@@ -135,7 +146,7 @@ nav .color-on {
 .topicTitle {
   font-size: 48px;
   margin-top: 7%;
-  font-family: 'Chakra Petch', sans-serif;
+ font-family: 'Righteous', cursive;
 }
 .scroll {
   box-shadow: 10px 10px 5px grey;
@@ -174,7 +185,11 @@ nav .color-on {
   justify-content: center;
   align-self: flex-end;
   width: 35%;
-  height: 10%;
+  height: 80%;
   margin: 13px;
    outline: none;
+   font-family: 'Righteous', cursive;
+   font-weight: 300;
+   font-size: 17px;
+   border-style: none;
 }
