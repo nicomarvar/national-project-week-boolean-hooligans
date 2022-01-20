@@ -50,7 +50,7 @@ function Topic({ topicId }) {
               <ul>
                   {
                     links.map((link) => {
-                        return <li>{link}</li>
+                        return <li><a href={link} target="_blank">{link}</a></li>
                     })
                   }
               </ul>
