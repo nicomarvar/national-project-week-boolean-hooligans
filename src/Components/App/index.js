@@ -5,7 +5,6 @@ import Topic from "../Topic";
 import Topbar from "../Topbar";
 import React, { useState, useEffect } from "react";
 
-let day = "Day 2";
 let overview = "The Days Topics";
 let lessonTopic = "useReducer";
 let resourceLinks = [
@@ -37,10 +36,14 @@ function App() {
 
   return (
     <div className="App">
-      <Sidebar gettingWeek={gettingWeek} apiData={apiData} gettingDay={gettingDay}/>
+      <Sidebar
+        gettingWeek={gettingWeek}
+        apiData={apiData}
+        gettingDay={gettingDay}
+      />
       <main>
         <Topbar week={theWeek} />
-        <Daybox dataId={dayId} day={day} overview={overview} />
+        <Daybox dataId={dayId} overview={overview} />
         <Topic lessonTopic={lessonTopic} resourceLinks={resourceLinks} />
       </main>
     </div>

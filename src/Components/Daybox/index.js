@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 function Daybox({ overview, dataId }) {
-  const [mainDay, setMainDay] = useState([]);
+  const [mainDay, setMainDay] = useState("");
   useEffect(() => {
     FetchData();
-  }, [dataId]);
+  });
   async function FetchData() {
     const response = await fetch(
       `https://boolean-hooligans.herokuapp.com/days/${dataId.day}`
@@ -14,7 +14,6 @@ function Daybox({ overview, dataId }) {
     setMainDay(data.payload[0].dayname);
   }
   //Managed to get the h1 to display the day one from the actual api!!
-  console.log(dataId.day);
 
   return (
     <div className="daybox">
