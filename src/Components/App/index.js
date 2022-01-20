@@ -1,5 +1,5 @@
 import "./App.css";
-// import Sidebar from "../Sidebar";
+import Sidebar from "../Sidebar";
 import Daybox from "../Daybox";
 import Topic from "../Topic";
 import Topbar from "../Topbar";
@@ -18,22 +18,8 @@ let resourceLinks = [
 function App() {
   const [apiData, setApiData] = useState([]);
   const [dayId, setDayId] = useState(1);
-  const [isOn, setIsOn] = useState(null);
   const [theWeek, setTheWeek] = useState("");
 
-  function dropDown(index) {
-    console.log("dropdown");
-    //if it's not null and the stored number isn't equal to the index passed then we want to setIsOn to be index.
-    if (isOn !== null && isOn !== index) {
-      console.log("if");
-      return setIsOn(index);
-    } else if (isOn === null) {
-      return setIsOn(index);
-    } else {
-      console.log("else");
-      return setIsOn(null);
-    }
-  }
   function gettingDay(id) {
     setDayId(id);
   }
@@ -51,54 +37,7 @@ function App() {
 
   return (
     <div className="App">
-      <nav className="nav">
-        <ul id="weekList">
-          {apiData?.map(({ weekname, weekid, daysid }, index) => {
-            return (
-              <li>
-                <button
-                  onClick={() => {
-                    dropDown(index);
-                    gettingWeek(weekname);
-                  }}
-                >
-                  {weekname}
-                </button>
-                <ul
-                  id={weekid}
-                  className={isOn === index ? "display-show" : "display-none"}
-                >
-                  {daysid.map((day) => {
-                    if (day % 4 === 0) {
-                      return (
-                        <li
-                          id={day}
-                          onClick={() => {
-                            gettingDay({ day });
-                          }}
-                        >
-                          Day 4
-                        </li>
-                      );
-                    } else {
-                      return (
-                        <li
-                          id={day}
-                          onClick={() => {
-                            gettingDay({ day });
-                          }}
-                        >
-                          Day {day % 4}
-                        </li>
-                      );
-                    }
-                  })}
-                </ul>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+      <Sidebar gettingWeek={gettingWeek} apiData={apiData} gettingDay={gettingDay}/>
       <main>
         <Topbar week={theWeek} />
         <Daybox dataId={dayId} day={day} overview={overview} />
