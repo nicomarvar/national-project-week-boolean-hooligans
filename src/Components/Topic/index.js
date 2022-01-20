@@ -9,16 +9,16 @@ function Topic({ topicId }) {
           const request = await fetch(`https://boolean-hooligans.herokuapp.com/subjects/${topicId[0]}`);
           const response = await request.json();
           console.log(response)
-          setTopic(response.payload[0].subjectname);          
+          setTopic([response.payload[0].subjectname]);
       }
       fetchTopic();
   }, [topicId])
 
-  async function handleSubmit(e, topicId) {
+  async function handleSubmit(e, id) {
     e.preventDefault();
     let resource = e.target.children[0].value;
     const request = await fetch(
-      `https://boolean-hooligans.herokuapp.com/subjects/${topicId}`,
+      `https://boolean-hooligans.herokuapp.com/subjects/${id}`,
       {
         method: "PATCH",
         body: JSON.stringify({
@@ -35,8 +35,7 @@ function Topic({ topicId }) {
   }
 
 
-  return  topicId.map((topic, index)=>{
-      return <div className="topics">
+  return <div className="topics">
           <h2 className="topicTitle">{topics}</h2>
           <div className="scroll">
               <ul>
@@ -47,14 +46,13 @@ function Topic({ topicId }) {
                   }
               </ul>
           </div>
-               <form className="submitBox" onSubmit={(e) => { handleSubmit(e, index)}}>
+               <form className="submitBox" onSubmit={(e) => { handleSubmit(e, topicId[0])}}>
           <input className="inputBox"></input>
           <button className="submitButton" type="submit">
             Submit
           </button>
         </form>
       </div>
-  })
   }
 //   return (
 //     <div className="topics">
