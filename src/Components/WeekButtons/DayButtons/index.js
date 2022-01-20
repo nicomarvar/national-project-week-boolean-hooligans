@@ -1,16 +1,31 @@
-// import React from "react";
-// function DayButtons({ daysid }) {
-//     return (
-//         <ul>
-//             {daysid.map((day) => {
-//                 if (day % 4 === 0) {
-//                     return <li>Day 4</li>;
-//                 } else {
-//                     return <li>Day {day % 4}</li>;
-//                 }
-//             })}
-//         </ul>
-//     );
-// }
+import React from "react";
 
-// export default DayButtons;
+function DayButtons({ daysid, gettingDay }) {
+    return (
+        <>
+            {daysid.map((day) => {
+                if (day % 4 === 0) {
+                    return (
+                        <li
+                            id={day}
+                            onClick={() => {gettingDay({ day })}}
+                        >
+                            Day 4
+                        </li>
+                    );
+                } else {
+                    return (
+                        <li
+                            id={day}
+                            onClick={() => {gettingDay({ day })}}
+                        >
+                            Day {day % 4}
+                        </li>
+                    );
+                }
+            })}
+        </>
+    );
+}
+
+export default DayButtons;
