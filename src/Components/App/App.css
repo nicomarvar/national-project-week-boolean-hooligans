@@ -1,3 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Dosis&family=PT+Sans:ital@0;1&family=Righteous&family=Roboto+Mono:ital,wght@0,400;1,300&family=Roboto+Slab&display=swap');
+
+/* 
+  For Topic
+  font-family: 'Chakra Petch', sans-serif;
+  
+  font-family: 'Dosis', sans-serif;
+  font-family: 'PT Sans', sans-serif;
+  font-family: 'Righteous', cursive;
+  font-family: 'Roboto Mono', monospace;
+  font-family: 'Roboto Slab', serif;
+*/
+
+/* 
+Move topic text
+Move down daytext
+submit section onclick border
+box shadow lighter
+submit button
+
+
+some space for between day4 and next week
+sidebar stretch till the end of the page
+sidebar onclick stay yellow
+topbar
+ */
+
 :root {
   --background-color: #c4c4c4;
   --border-top-color: #5456dc;
@@ -8,7 +35,8 @@
     "sidebar header"
     "sidebar main"
     "sidebar main";
-}
+
+  }
 /* sidebar */
 .nav {
   background-color: var(--background-color);
@@ -21,23 +49,28 @@
 
 .nav button {
   background-color: lightgrey;
-  border-radius: 20px;
+  border-radius: 30px;
   border-style: none;
-  width: 40%;
+  width: 80%;
   height: 30px;
   margin-bottom: 10px;
+  font-family: 'Righteous', cursive;
+  font-size: 15px;
 }
 .nav button:hover {
   background-color: orange;
+}
+
+.dayListButton {
+  font-family: 'Righteous', cursive;
+
+  font-weight: 400;
 }
 .dayListButton:hover {
   text-decoration: underline;
   cursor: grabbing;
 }
-.day4ListButton:hover {
-  text-decoration: underline;
-  cursor: grabbing;
-}
+
 
 .display-show {
   display: block;
@@ -58,9 +91,10 @@
 .topText {
   margin: 0%;
   font-size: 48px;
+  font-family: 'Righteous', cursive;
 }
 .daybox {
-  border-top-left-radius: 25px;
+  /* border-top-left-radius: 25px; */
   border-top: 8px solid var(--border-top-color);
   display: flex;
   flex-direction: row;
@@ -72,7 +106,8 @@
 }
 .dayText {
   margin: 0%;
-  font-size: 96px;
+  font-size: 66px;
+  font-family: 'Righteous', cursive;
 }
 .overview {
   margin-top: 6%;
@@ -81,8 +116,8 @@
 }
 .topics {
   box-shadow: 10px 10px 5px grey;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+  /* border-top-left-radius: 25px; */
+  /* border-top-right-radius: 25px; */
   border-top: 8px solid var(--border-top-color);
   display: flex;
   flex-direction: row;
@@ -91,10 +126,12 @@
   margin-right: 5%;
   height: 283px;
   justify-content: space-around;
+  font-family: 'Dosis', sans-serif;
 }
 .topicTitle {
   font-size: 48px;
   margin-top: 7%;
+  font-family: 'Chakra Petch', sans-serif;
 }
 .scroll {
   box-shadow: 10px 10px 5px grey;
