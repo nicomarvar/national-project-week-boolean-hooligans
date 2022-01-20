@@ -27,6 +27,12 @@
   height: 30px;
   margin-bottom: 10px;
 }
+.nav button:hover {
+  background-color: orange;
+}
+.dayListButton:hover {
+  text-decoration: underline;
+}
 
 .display-show {
   display: block;
@@ -71,6 +77,7 @@
 .topics {
   box-shadow: 10px 10px 5px grey;
   border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
   border-top: 8px solid var(--border-top-color);
   display: flex;
   flex-direction: row;
