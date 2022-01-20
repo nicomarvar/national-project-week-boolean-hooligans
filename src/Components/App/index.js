@@ -5,7 +5,7 @@ import Topic from "../Topic";
 import Topbar from "../Topbar";
 import React, { useState, useEffect } from "react";
 
-let overview = "Topics Of The Day";
+let overview = "";
 
 function App() {
   const [apiData, setApiData] = useState([]);
@@ -41,6 +41,7 @@ function App() {
         gettingDay={gettingDay}
       />
       <main>
+        <h1 id="title">School Of Code</h1>
         <Topbar week={theWeek} />
         <Daybox gettingTopic={gettingTopic} day={dayId} overview={overview} />
         <Topic topicId={topicId} />
