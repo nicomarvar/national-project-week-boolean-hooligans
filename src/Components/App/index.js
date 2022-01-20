@@ -5,7 +5,7 @@ import Topic from "../Topic";
 import Topbar from "../Topbar";
 import React, { useState, useEffect } from "react";
 
-let overview = "The Days Topics";
+let overview = "Topics Of The Day";
 let lessonTopic = "useReducer";
 let resourceLinks = [
   "link to awesome resource!",
