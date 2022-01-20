@@ -1,5 +1,5 @@
 import "./App.css";
-import Sidebar from "../Sidebar";
+import WeekButtons from "../WeekButtons";
 import Daybox from "../Daybox";
 import Topic from "../Topic";
 import Topbar from "../Topbar";
@@ -18,6 +18,11 @@ function App() {
   const [apiData, setApiData] = useState([]);
   const [dayId, setDayId] = useState(1);
   const [theWeek, setTheWeek] = useState("");
+  const [topicId, setTopicId] = useState([]);
+
+  function gettingTopic(id) {
+    setTopicId(id);
+  }
 
   function gettingDay(id) {
     setDayId(id);
@@ -26,25 +31,30 @@ function App() {
     setTheWeek(theWeekName);
   }
   useEffect(() => {
+    async function FetchApi() {
+      const response = await fetch("https://boolean-hooligans.herokuapp.com/");
+      const data = await response.json();
+      setApiData(data.payload);
+    }
     FetchApi();
   }, []);
-  async function FetchApi() {
-    const response = await fetch("https://boolean-hooligans.herokuapp.com/");
-    const data = await response.json();
-    setApiData(data.payload);
-  }
-
+  console.log(topicId);
   return (
     <div className="App">
-      <Sidebar
+      <WeekButtons
+        gettingTopic={gettingTopic}
         gettingWeek={gettingWeek}
         apiData={apiData}
         gettingDay={gettingDay}
       />
       <main>
         <Topbar week={theWeek} />
-        <Daybox dataId={dayId} overview={overview} />
-        <Topic lessonTopic={lessonTopic} resourceLinks={resourceLinks} />
+        <Daybox gettingTopic={gettingTopic} day={dayId} overview={overview} />
+        <Topic
+          topicId={topicId}
+          lessonTopic={lessonTopic}
+          resourceLinks={resourceLinks}
+        />
       </main>
     </div>
   );
