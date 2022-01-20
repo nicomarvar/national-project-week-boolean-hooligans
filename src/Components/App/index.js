@@ -7,7 +7,7 @@ import React, { useState, useEffect } from "react";
 
 let day = "Day 2";
 let week = "Week 3";
-let overview = "Learning React";
+let overview = "The Days Topics";
 let lessonTopic = "useReducer";
 let resourceLinks = [
   "link to awesome resource!",
@@ -17,12 +17,10 @@ let resourceLinks = [
 
 function App() {
   const [apiData, setApiData] = useState([]);
-  // const [isOn, setIsOn] = useState(false);
   const [dayId, setDayId] = useState(1);
   const [isOn, setIsOn] = useState(null);
-  // function dropDown() {
-  //   return setIsOn((isOn) => !isOn);
-  // }
+  const [theWeek, setTheWeek] = useState("");
+
   function dropDown(index) {
     console.log("dropdown");
     //if it's not null and the stored number isn't equal to the index passed then we want to setIsOn to be index.
@@ -39,7 +37,9 @@ function App() {
   function gettingDay(id) {
     setDayId(id);
   }
-
+  function gettingWeek(theWeekName) {
+    setTheWeek(theWeekName);
+  }
   useEffect(() => {
     FetchApi();
   }, []);
@@ -56,7 +56,14 @@ function App() {
           {apiData?.map(({ weekname, weekid, daysid }, index) => {
             return (
               <li>
-                <button onClick={() => dropDown(index)}> {weekname}</button>
+                <button
+                  onClick={() => {
+                    dropDown(index);
+                    gettingWeek(weekname);
+                  }}
+                >
+                  {weekname}
+                </button>
                 <ul
                   id={weekid}
                   className={isOn === index ? "display-show" : "display-none"}
@@ -93,7 +100,7 @@ function App() {
         </ul>
       </nav>
       <main>
-        <Topbar week={week} />
+        <Topbar week={theWeek} />
         <Daybox dataId={dayId} day={day} overview={overview} />
         <Topic lessonTopic={lessonTopic} resourceLinks={resourceLinks} />
       </main>
