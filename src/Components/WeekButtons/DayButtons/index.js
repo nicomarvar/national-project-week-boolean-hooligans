@@ -9,7 +9,7 @@ function DayButtons({ daysid, gettingDay }) {
             <li
               id={day}
               onClick={() => {
-                gettingDay({ day });
+                gettingDay(day);
               }}
             >
               Day 4
@@ -21,7 +21,7 @@ function DayButtons({ daysid, gettingDay }) {
               className="dayListButton"
               id={day}
               onClick={() => {
-                gettingDay({ day });
+                gettingDay(day);
               }}
             >
               Day {day % 4}
