@@ -11,16 +11,17 @@
   font-family: 'Roboto Slab', serif;
 */
 
-/* 
-Move topic text
-Move down daytext
-submit section onclick border
-box shadow lighter
-submit button
-
-
-some space for between day4 and next week
+/*
+Move topic text  DONE = removed
+Move down daytext  DONE
+submit section onclick border get rid of DONE
+submit button INCOMPLETE
+Change topic title list to same as rest of font INCOMPLETE
+Add Title on top of week - when you open the app it looks empty OR show top bar even if empty. INCOMPLETE
+Change position of input box cursor to top of the page. DONE
+some space for between day4 and next week DONE
 sidebar stretch till the end of the page
+evenly space buttons
 sidebar onclick stay yellow
 topbar
  */
@@ -55,10 +56,10 @@ topbar
   border-radius: 30px;
   border-style: none;
   width: 80%;
-  height: 30px;
-  margin: 5px 0;
+  height: 50px;
+  margin: 10px 0;
   font-family: 'Righteous', cursive;
-  font-size: 15px;
+  font-size: 20px;
 }
 .nav button:hover,
 nav .color-on {
@@ -114,6 +115,8 @@ nav .color-on {
   margin: 0%;
   font-size: 66px;
   font-family: 'Righteous', cursive;
+  position: relative;
+  top: 20px;
 }
 .overview {
   margin-top: 6%;
@@ -163,6 +166,10 @@ nav .color-on {
   border: #ffffff;
   width: 98%;
   height: 90%;
+   height: 100%;
+  outline: none;
+  /* text-align: left; */
+  padding-bottom: 150px;
 }
 .submitButton {
   /* border: none; */
@@ -174,4 +181,5 @@ nav .color-on {
   width: 35%;
   height: 10%;
   margin: 13px;
+   outline: none;
 }
