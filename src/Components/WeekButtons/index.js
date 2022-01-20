@@ -15,33 +15,38 @@ function WeekButtons({ apiData, gettingDay, gettingWeek }) {
       console.log("else");
       return setIsOn(null);
     }
-  }
-  return (
-    <nav className="nav">
-      <ul id="weekList">
-        {apiData?.map(({ weekname, weekid, daysid }, index) => {
-          return (
-            <li>
-              <button
-                onClick={() => {
-                  dropDown(index);
-                  gettingWeek(weekname);
-                }}
-              >
-                {weekname}
-              </button>
-              <ul
-                id={weekid}
-                className={isOn === index ? "display-show" : "display-none"}
-              >
-                <DayButtons daysid={daysid} gettingDay={gettingDay} />
-              </ul>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
-  );
+    return (
+        <ul id="weekList">
+            {apiData?.map(({ weekname, weekid, daysid }, index) => {
+                return (
+                    <li>
+                        <button
+                            onClick={() => {
+                                dropDown(index);
+                                gettingWeek(weekname);
+                            }}
+                            className={
+                                isOn === index ? "color-on" : "color-none"
+                            }
+                        >
+                            {weekname}
+                        </button>
+                        <ul
+                            id={weekid}
+                            className={
+                                isOn === index ? "display-show" : "display-none"
+                            }
+                        >
+                            <DayButtons
+                                daysid={daysid}
+                                gettingDay={gettingDay}
+                            />
+                        </ul>
+                    </li>
+                );
+            })}
+        </ul>
+    );
 }
 
 export default WeekButtons;
