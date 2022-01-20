@@ -18,11 +18,6 @@ submit section onclick border
 box shadow lighter
 submit button
 
-
-some space for between day4 and next week
-sidebar stretch till the end of the page
-sidebar onclick stay yellow
-topbar
  */
 
 :root {
@@ -54,6 +49,7 @@ topbar
   background-color: lightgrey;
   border-radius: 30px;
   border-style: none;
+
   width: 80%;
   height: 30px;
   margin: 5px 0;
