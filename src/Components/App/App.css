@@ -32,6 +32,11 @@
 }
 .dayListButton:hover {
   text-decoration: underline;
+  cursor: grabbing;
+}
+.day4ListButton:hover {
+  text-decoration: underline;
+  cursor: grabbing;
 }
 
 .display-show {

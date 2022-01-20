@@ -7,6 +7,7 @@ function DayButtons({ daysid, gettingDay }) {
         if (day % 4 === 0) {
           return (
             <li
+              className="day4ListButton"
               id={day}
               onClick={() => {
                 gettingDay({ day });
