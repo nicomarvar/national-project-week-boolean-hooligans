@@ -15,8 +15,9 @@ function WeekButtons({ apiData, gettingDay, gettingWeek }) {
       console.log("else");
       return setIsOn(null);
     }
+}
     return (
-        <ul id="weekList">
+        <ul id="weekList" className="nav">
             {apiData?.map(({ weekname, weekid, daysid }, index) => {
                 return (
                     <li>
