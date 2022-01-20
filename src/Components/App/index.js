@@ -17,10 +17,24 @@ let resourceLinks = [
 
 function App() {
   const [apiData, setApiData] = useState([]);
-  const [isOn, setIsOn] = useState(false);
+  // const [isOn, setIsOn] = useState(false);
   const [dayId, setDayId] = useState(1);
-  function dropDown() {
-    return setIsOn((isOn) => !isOn);
+  const [isOn, setIsOn] = useState(null);
+  // function dropDown() {
+  //   return setIsOn((isOn) => !isOn);
+  // }
+  function dropDown(index) {
+    console.log("dropdown");
+    //if it's not null and the stored number isn't equal to the index passed then we want to setIsOn to be index.
+    if (isOn !== null && isOn !== index) {
+      console.log("if");
+      return setIsOn(index);
+    } else if (isOn === null) {
+      return setIsOn(index);
+    } else {
+      console.log("else");
+      return setIsOn(null);
+    }
   }
   function gettingDay(id) {
     setDayId(id);
@@ -39,13 +53,13 @@ function App() {
     <div className="App">
       <nav className="nav">
         <ul id="weekList">
-          {apiData?.map(({ weekname, weekid, daysid }) => {
+          {apiData?.map(({ weekname, weekid, daysid }, index) => {
             return (
               <li>
-                <button onClick={dropDown}> {weekname}</button>
+                <button onClick={() => dropDown(index)}> {weekname}</button>
                 <ul
                   id={weekid}
-                  className={isOn ? "display-show" : "display-none"}
+                  className={isOn === index ? "display-show" : "display-none"}
                 >
                   {daysid.map((day) => {
                     if (day % 4 === 0) {
