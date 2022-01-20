@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 function Topic({ topicId }) {
-  const [links, setLinks] = useState(["Find Here some useful links"]);
+  const [links, setLinks] = useState([]);
   const [topics, setTopic] = useState("");
 
   useEffect(function(){
@@ -48,6 +48,7 @@ function Topic({ topicId }) {
           <h2 className="topicTitle">{topics}</h2>
           <div className="scroll">
               <ul>
+              <h3>Some useful resources:</h3>
                   {
                     links.map((link) => {
                         return <li><a href={link} target="_blank">{link}</a></li>
