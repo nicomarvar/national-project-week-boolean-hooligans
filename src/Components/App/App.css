@@ -41,39 +41,44 @@ topbar
 .nav {
   background-color: var(--background-color);
   width: 17vw;
+  height: 100vh;
+  padding-top: 48px;
 }
 
 .nav ul {
   list-style: none;
 }
 
-.nav button {
+.nav button,
+.nav .color-none {
   background-color: lightgrey;
   border-radius: 30px;
   border-style: none;
   width: 80%;
   height: 30px;
-  margin-bottom: 10px;
+  margin: 5px 0;
   font-family: 'Righteous', cursive;
   font-size: 15px;
 }
-.nav button:hover {
+.nav button:hover,
+nav .color-on {
   background-color: orange;
 }
 
 .dayListButton {
   font-family: 'Righteous', cursive;
-
   font-weight: 400;
 }
+
 .dayListButton:hover {
   text-decoration: underline;
-  cursor: grabbing;
+  cursor:pointer;
 }
 
 
 .display-show {
   display: block;
+  margin-bottom: 5px;
 }
 
 .display-none {
@@ -83,10 +88,11 @@ topbar
 /* main */
 .topbar {
   margin: 0px;
+  padding: 20px;
   display: flex;
   justify-content: center;
   width: 83vw;
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
 }
 .topText {
   margin: 0%;

@@ -7,7 +7,7 @@ function Daybox({ overview, dataId }) {
   });
   async function FetchData() {
     const response = await fetch(
-      `https://boolean-hooligans.herokuapp.com/days/${dataId.day}`
+      `https://boolean-hooligans.herokuapp.com/days/3`
     );
     //Set the day to change the route it fetches data from
     const data = await response.json();

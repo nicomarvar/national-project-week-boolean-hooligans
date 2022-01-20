@@ -21,10 +21,15 @@ function WeekButtons({ apiData, gettingDay, gettingWeek }) {
             {apiData?.map(({ weekname, weekid, daysid }, index) => {
                 return (
                     <li>
-                        <button onClick={() =>{
-                            dropDown(index);
-                            gettingWeek(weekname);
-                        }}>
+                        <button
+                            onClick={() => {
+                                dropDown(index);
+                                gettingWeek(weekname);
+                            }}
+                            className={
+                                isOn === index ? "color-on" : "color-none"
+                            }
+                        >
                             {weekname}
                         </button>
                         <ul
