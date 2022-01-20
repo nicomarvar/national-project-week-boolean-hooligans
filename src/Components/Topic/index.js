@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Topic({ lessonTopic, resourceLinks, topicId }) {
+function Topic({ topicId }) {
   const [links, setLinks] = useState([]);
 
   async function handleSubmit(e, topicId) {
@@ -25,7 +25,7 @@ function Topic({ lessonTopic, resourceLinks, topicId }) {
 
   return (
     <div className="topics">
-      <h2 className="topicTitle">{lessonTopic}</h2>
+      <h2 className="topicTitle">hello</h2>
       <div className="scroll">
         <ul>
           {links.map((link) => {
@@ -36,7 +36,7 @@ function Topic({ lessonTopic, resourceLinks, topicId }) {
       <form
         className="submitBox"
         onSubmit={(e) => {
-          handleSubmit(e, 1);
+          handleSubmit(e, topicId);
         }}
       >
         <input className="inputBox"></input>

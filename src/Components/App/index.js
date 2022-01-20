@@ -6,13 +6,6 @@ import Topbar from "../Topbar";
 import React, { useState, useEffect } from "react";
 
 let overview = "Topics Of The Day";
-let lessonTopic = "useReducer";
-let resourceLinks = [
-  "link to awesome resource!",
-  "Scott !!!!!!!!",
-  "link to awesome resource!",
-  "link to awesome resource!",
-];
 
 function App() {
   const [apiData, setApiData] = useState([]);
@@ -50,11 +43,7 @@ function App() {
       <main>
         <Topbar week={theWeek} />
         <Daybox gettingTopic={gettingTopic} day={dayId} overview={overview} />
-        <Topic
-          topicId={topicId}
-          lessonTopic={lessonTopic}
-          resourceLinks={resourceLinks}
-        />
+        <Topic topicId={topicId} />
       </main>
     </div>
   );
