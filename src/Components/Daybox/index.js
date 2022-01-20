@@ -17,6 +17,7 @@ function Daybox({ overview, day, gettingTopic }) {
   }, [day]);
   // Managed to get the h1 to display the day one from the actual api!!
 
+
   return (
     <div className="daybox">
       <h1 className="dayText">{mainDay}</h1>

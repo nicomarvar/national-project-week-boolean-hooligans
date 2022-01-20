@@ -18,11 +18,6 @@ submit section onclick border
 box shadow lighter
 submit button
 
-
-some space for between day4 and next week
-sidebar stretch till the end of the page
-sidebar onclick stay yellow
-topbar
  */
 
 :root {
@@ -41,39 +36,45 @@ topbar
 .nav {
   background-color: var(--background-color);
   width: 17vw;
+  height: 100vh;
+  padding-top: 48px;
 }
 
 .nav ul {
   list-style: none;
 }
 
-.nav button {
+.nav button,
+.nav .color-none {
   background-color: lightgrey;
   border-radius: 30px;
   border-style: none;
+
   width: 80%;
-  height: 30px;
-  margin-bottom: 10px;
+  height: 50px;
+  margin: 10px 0;
   font-family: 'Righteous', cursive;
-  font-size: 15px;
+  font-size: 20px;
 }
-.nav button:hover {
+.nav button:hover,
+nav .color-on {
   background-color: orange;
 }
 
 .dayListButton {
   font-family: 'Righteous', cursive;
-
   font-weight: 400;
 }
+
 .dayListButton:hover {
   text-decoration: underline;
-  cursor: grabbing;
+  cursor:pointer;
 }
 
 
 .display-show {
   display: block;
+  margin-bottom: 5px;
 }
 
 .display-none {
@@ -83,10 +84,11 @@ topbar
 /* main */
 .topbar {
   margin: 0px;
+  padding: 20px;
   display: flex;
   justify-content: center;
   width: 83vw;
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
 }
 .topText {
   margin: 0%;
@@ -108,6 +110,8 @@ topbar
   margin: 0%;
   font-size: 66px;
   font-family: 'Righteous', cursive;
+  position: relative;
+  top: 20px;
 }
 .overview {
   margin-top: 6%;
@@ -157,6 +161,10 @@ topbar
   border: #ffffff;
   width: 98%;
   height: 90%;
+   height: 100%;
+  outline: none;
+  /* text-align: left; */
+  padding-bottom: 150px;
 }
 .submitButton {
   /* border: none; */
@@ -168,4 +176,5 @@ topbar
   width: 35%;
   height: 10%;
   margin: 13px;
+   outline: none;
 }
