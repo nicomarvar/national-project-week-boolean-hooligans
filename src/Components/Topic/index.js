@@ -52,7 +52,7 @@ function Topic({ topicId }) {
               <h3>Some useful resources:</h3>
                   {
                     links.map((link) => {
-                        return <li><a href={link} target="_blank">{link}</a></li>
+                        return <li><a href={link} target="_blank" rel="noreferrer">{link}</a></li>
                     })
                   }
               </ul>
