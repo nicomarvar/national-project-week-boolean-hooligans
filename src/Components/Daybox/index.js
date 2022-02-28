@@ -5,7 +5,7 @@ function Daybox({ overview, day, gettingTopic }) {
   useEffect(() => {
     async function FetchData() {
       const response = await fetch(
-        `http://boolean-hooligans.herokuapp.com/days/${day}`
+        `https://boolean-hooligans.herokuapp.com/days/${day}`
       );
       //Set the day to change the route it fetches data from
       const data = await response.json();

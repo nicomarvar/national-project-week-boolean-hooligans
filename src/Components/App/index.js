@@ -25,7 +25,7 @@ function App() {
   }
   useEffect(() => {
     async function FetchApi() {
-      const response = await fetch("http://boolean-hooligans.herokuapp.com/");
+      const response = await fetch("https://boolean-hooligans.herokuapp.com/");
       const data = await response.json();
       setApiData(data.payload);
     }
