@@ -57,7 +57,7 @@ function Topic({ topicId }) {
                   }
               </ul>
           </div>
-               <form className="submitBox" onSubmit={(e) => { handleSubmit(e, topicId[0]+"")}}>
+               <form className="submitBox" onSubmit={(e) => { handleSubmit(e, topicId[0])}}>
           <input className="inputBox"></input>
           <button className="submitButton" type="submit">
             Submit
