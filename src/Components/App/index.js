@@ -11,7 +11,7 @@ function App() {
   const [apiData, setApiData] = useState([]);
   const [dayId, setDayId] = useState(1);
   const [theWeek, setTheWeek] = useState("");
-  const [topicId, setTopicId] = useState([]);
+  const [topicId, setTopicId] = useState([1]);
 
   function gettingTopic(id) {
     setTopicId(id);
