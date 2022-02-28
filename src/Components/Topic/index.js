@@ -6,7 +6,7 @@ function Topic({ topicId }) {
 
   useEffect(function(){
     async function fetchTopic(){
-        const request = await fetch(`https://boolean-hooligans.herokuapp.com/subjects/${topicId[0]}`);
+        const request = await fetch(`http://boolean-hooligans.herokuapp.com/subjects/${topicId[0]}`);
         const response = await request.json();
         console.log("called")
         setLinks(response.payload[0].links);
@@ -17,7 +17,7 @@ function Topic({ topicId }) {
 
   useEffect(function(){
       async function fetchTopic(){
-          const request = await fetch(`https://boolean-hooligans.herokuapp.com/subjects/${topicId[0]}`);
+          const request = await fetch(`http://boolean-hooligans.herokuapp.com/subjects/${topicId[0]}`);
           const response = await request.json();
           setTopic([response.payload[0].subjectname]);
       }
@@ -28,7 +28,7 @@ function Topic({ topicId }) {
     e.preventDefault();
     let resource = e.target.children[0].value;
     const request = await fetch(
-      `https://boolean-hooligans.herokuapp.com/subjects/${id}`,
+      `http://boolean-hooligans.herokuapp.com/subjects/${id}`,
       {
         method: "PATCH",
         body: JSON.stringify({
