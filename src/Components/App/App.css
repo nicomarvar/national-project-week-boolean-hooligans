@@ -1,195 +1,226 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Dosis&family=PT+Sans:ital@0;1&family=Righteous&family=Roboto+Mono:ital,wght@0,400;1,300&family=Roboto+Slab&display=swap');
 
 /* 
-  For Topic
-  font-family: 'Chakra Petch', sans-serif;
-  
-  font-family: 'Dosis', sans-serif;
-  font-family: 'PT Sans', sans-serif;
-  font-family: 'Righteous', cursive;
-  font-family: 'Roboto Mono', monospace;
-  font-family: 'Roboto Slab', serif;
+For Topic
+font-family: 'Chakra Petch', sans-serif;
+
+For resources
+font-family: 'Dosis', sans-serif;
+
+For rest of the page
+font-family: 'Righteous', cursive;
+
+Just in case
+font-family: 'PT Sans', sans-serif;
+font-family: 'Roboto Mono', monospace;
+font-family: 'Roboto Slab', serif;
 */
 
-/* 
-Move topic text
-Move down daytext
-submit section onclick border
-box shadow lighter
-submit button
-
- */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Dosis&family=PT+Sans:ital@0;1&family=Righteous&family=Roboto+Mono:ital,wght@0,400;1,300&family=Roboto+Slab&display=swap');
 
 :root {
-  --background-color: #c4c4c4;
+  --background-grey: #c4c4c4;
+  --background-white: #ffffff; 
+  --button-background-grey: #d3d3d3; 
   --border-top-color: #5456dc;
+  --sidebar-color: #ffa500;
+  --shadow-grey: #808080;
+  --font-darkgrey: #202020;
 }
+
 .App {
   display: grid;
   grid-template-areas:
     "sidebar header"
     "sidebar main"
     "sidebar main";
-
+  color: var(--font-darkgrey);
+  width: 100vw;
   }
+
+
+
 /* sidebar */
 .nav {
-  background-color: var(--background-color);
+  background-color: var(--background-grey);
+  margin: 0;
   width: 17vw;
   height: 100vh;
-  margin: 0;
   padding-top: 48px;
   list-style: none;
 }
 
 .nav button,
 .nav .color-none {
-  background-color: lightgrey;
+  background-color: var(--button-background-grey);
+  margin: 10px 0;
+  height: 50px;
+  width: 80%;
   border-radius: 30px;
   border-style: none;
-  width: 80%;
-  height: 50px;
-  margin: 10px 0;
   font-family: 'Righteous', cursive;
   font-size: 20px;
-
 }
+
 .nav button:hover,
 .nav .color-on {
-  background-color: orange;
+  background-color: var(--sidebar-color);
 }
 
 .dayListButton {
+  margin-bottom: 8px;
+  list-style: none;
   font-family: 'Righteous', cursive;
   font-weight: 400;
-    list-style: none;
-    font-size: 20px;
+  font-size: 20px;
 }
-
-.dayListButton:hover {
-  text-decoration: underline;
-  cursor:pointer;
-}
-
 
 .display-show {
-  display: block;
-  margin-bottom: 5px;
+  width: 80%;
+  padding: 2px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .display-none {
   display: none;
 }
 
-/* main */
+.dayListButton:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 
+
+/* main */
 #title {
   font-size: 60px;
   font-family: 'Righteous', cursive;
   text-align: center;
 }
 
-
 .topbar {
   /* margin: 0px; */
-  margin-top: 5%;
-  padding-top: 30px;
+  /* background-color: var(--background-grey); */
+  margin: 3% 0 0 5%;
+  padding-top: 20px;
   display: flex;
-  justify-content:flex-start;
+  justify-content: flex-start;
   border-top: 8px solid var(--border-top-color);
   width: 83vw;
-  margin-left: 5%;
-  /* background-color: var(--background-color); */
 }
+
 .topText {
   margin: 0%;
   font-size: 52px;
   font-family: 'Righteous', cursive;
 }
+
 .daybox {
   /* border-top-left-radius: 25px; */
   /* border-top: 8px solid var(--border-top-color); */
+  /* margin-top: 3%; */
   display: flex;
   flex-direction: row;
   max-width: 80vw;
   justify-content: left;
-  margin-left: 5%;
-  margin-right: 5%;
-  /* margin-top: 3%; */
+  margin: 0 5% 0 5%;
 }
+
 .dayText {
-  margin: 0%;
+  /* top: 20px; */
+  margin: 0;
   font-size: 52px;
   font-family: 'Righteous', cursive;
   position: relative;
-  /* top: 20px; */
 }
+
 .overview {
-  margin-top: 6%;
-  margin-left: 16%;
+  margin: 6% 0 0 16%;
   font-size: 24px;
 }
+
 .topics {
-  box-shadow: 5px 5px 2px grey;
   /* border-top-left-radius: 25px; */
   /* border-top-right-radius: 25px; */
-  border-top: 8px solid var(--border-top-color);
-  display: flex;
-  flex-direction: row;
-  background-color: var(--background-color);
-  margin-left: 5%;
-  margin-right: 5%;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: space-around; */
+  display: grid;
+  grid-template-columns: 4fr 3fr 3fr;
+  text-align: center;
+  grid-gap: 30px;
+  margin: 0 5% 0 5%;
   height: 283px;
-  justify-content: space-around;
+  background-color: var(--background-grey);
+  box-shadow: 5px 5px 2px var(--shadow-grey);
+  border-top: 8px solid var(--border-top-color);
   font-family: 'Dosis', sans-serif;
 }
+
 .topicTitle {
+  display: flex;
+  align-items: center;
+  margin: 0 0 0 30px;
   font-size: 48px;
-  margin-top: 7%;
- font-family: 'Righteous', cursive;
+  font-family: 'Righteous', cursive;
 }
+
 .scroll {
-  box-shadow: 10px 10px 5px grey;
+  /* width: 35%; */
   display: block;
-  background-color: #ffffff;
   padding: 5px;
   margin-top: 20px;
-  width: 35%;
   height: 80%;
+  background-color: var(--background-white);
+  box-shadow: 10px 10px 5px var(--shadow-grey);
   overflow-y: scroll;
 }
+
+.scroll h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.scroll a {
+  text-decoration: none;
+  color: var(--font-darkgrey);
+  font-size: 17px;
+}
+
 .submitBox {
-  box-shadow: 10px 10px 5px grey;
+  /* width: 20%; */
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
-  margin-top: 20px;
-  width: 20%;
-  height: 83%;
   text-align: center;
+  margin: 20px 30px 0 0;
+  height: 83%;
+  background-color: var(--background-white);
+  box-shadow: 10px 10px 5px var(--shadow-grey);
 }
+
 .inputBox {
-  border: #ffffff;
-  width: 98%;
-  height: 90%;
-   height: 100%;
-  outline: none;
+  /* height: 90%; */
   /* text-align: left; */
+  width: 98%;
+  height: 100%;
   padding-bottom: 150px;
+  border: var(--background-white);
+  outline: none;
 }
+
 .submitButton {
-  /* border: none; */
-  border-radius: 25px;
-  background-color: var(--background-color);
   display: flex;
   justify-content: center;
   align-self: flex-end;
   width: 35%;
   height: 80%;
   margin: 13px;
-   outline: none;
-   font-family: 'Righteous', cursive;
-   font-weight: 300;
-   font-size: 17px;
-   border-style: none;
+  border-radius: 25px;
+  border-style: none;
+  outline: none;
+  background-color: var(--background-grey);
+  font-family: 'Righteous', cursive;
+  font-size: 17px;
+  font-weight: 300;
 }
