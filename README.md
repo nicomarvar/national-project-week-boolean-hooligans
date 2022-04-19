@@ -1,1 +1,1 @@
-Check it out [here](https://goofy-banach-bd1282.netlify.app/)
+Check it out [here](https://boolean-hooligans.netlify.app/)
