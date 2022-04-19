@@ -1,1 +1,1 @@
-Check it out [here](https://boolean-hooligans.netlify.app/)
+Check it out <a href="https://boolean-hooligans.netlify.app/" target="_blank"> here!</a>
